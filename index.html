@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="shortcuticon" content="logo.png">
+  <link rel="stylesheet" href="index.css">
+  <title>Login</title>
+</head>
+<body>
+  <main>
+    <div class="content">
+      <h1>Login</h1>
+      <input id="nama" type="text" placeholder="Username">
+      <input id="pw" type="password" placeholder="Password">
+      <input id="show" onclick="lihat()" type="checkbox">
+      <label for="show" onclick="lihat()">Tampilkan Password</label>
+      <button onclick="login()">Login</button>
+      <a href="">Belum punya akun?</a>
+    </div>
+  </main>
+  
+  <script>
+    const name = document.getElementById('nama');
+    const password = document.getElementById('pw');
+    
+    function login() {
+      if (name.value === 'admin' && password.value === 'admin') {
+        alert('succses');
+      } else {
+        alert('gagal');
+      }
+    }
+    
+    function lihat() {
+      password.style.background = 'red';
+    }
+  </script>
+</body>
+</html>

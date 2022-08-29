@@ -2,39 +2,487 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="keywords" content="Rzl Am, Rizal Am, Rizal Amin, Rizal Amin M, Rzlam github, github pages, home, landing page, html, css, javascript, js, jquery, framework, simple, web, portofolio web design, desain web portofolio, minimalis, hijau, green">
+  <meta name="author" content="Rizal Amin Maulana">
+  <meta name="description" content="Ini adalah website portofolio yang dibuat dengan teknologi HTML CSS dan JS. Website ini dibuat tanpa menggunakan framework apapun seperti Bootstrap, Tailwind, ataupun Jquery. Website ini murni hasil buatan tanpa framework apapun.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="shortcuticon" content="logo.png">
-  <link rel="stylesheet" href="index.css">
-  <title>Login</title>
+  <title>Rzl Am - Portofolio Website</title>
+  <style>
+    html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  height: 1000px;
+}
+
+.sec {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  margin-bottom: 50px;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: .5s;
+  box-shadow: 0 0 20px rgba(0,0,0,.1);
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  height: 60px;
+  z-index: 999;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation label {
+  position: relative;
+  font-weight: 500;
+  color: #454545;
+  font-size: 25px;
+  min-width: 80px;
+}
+
+.navigation ul {
+  position: relative;
+  display: flex;
+}
+
+.navigation ul li {
+  list-style: none;
+}
+
+.navigation ul li a {
+  margin-left: 40px;
+  display: inline-block;
+  text-decoration: none;
+  color: #454545;
+  font-weight: 400;
+}
+
+.navigation ul li a:hover {
+  -webkit-tap-highlight-color: transparent !important;
+  color: #505050;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content .textBox {
+  position: relative;
+  max-width: 600px;
+}
+
+.content .textBox h2 {
+  color: #000;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.content .textBox h2 span {
+  border-left: 4px solid #26be80;
+  padding: 0 8px;
+  font-size: 2em;
+  font-style: bold;
+  font-family: Segoe UI;
+  color: #000;
+  animation: fillBg 10s infinite alternate;
+}
+
+@keyframes fillBg {
+  0% {
+    background: rgb(38,190,128,0);
+  }
+  
+  100% {
+    background: rgb(38,190,128,.3);
+  }
+}
+
+/*h2.content h2 span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 29px;
+  z-index: 990;
+  height: 0.8em;
+  width: 100%;
+  background: #4A73E1;
+  border-left: 2px solid #eaeaea;
+  animation: typing 1.5s steps(10) infinite;
+}
+
+@keyframes typing {
+  100% {
+    left: 80%;
+  }
+}*/
+
+.content .textBox p {
+  color: #454545;
+  margin-top: 10px;
+}
+
+.content .textBox a {
+  -webkit-tap-highlight-color: transparent !important;
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  color: #26be80;
+  border: thin solid #26be80;
+  background: transparent;
+  text-decoration: none;
+  border-radius: 40px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: .3s;
+}
+
+.content .textBox a:hover {
+  color: #fff;
+  border: thin solid transparent;
+  background: #26be80;
+}
+
+.content .imgBox {
+  display: flex;
+  width: 600px;
+  margin-top: 50px;
+  justify-content: flex-end;
+}
+
+.gelombang {
+  margin-top: -250px;
+  position: relative;
+}
+
+main {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+main .isiUtama {
+  max-width: 60%;
+  margin-top: 0;
+  padding: 0 20px 20px 100px;
+}
+
+main .isiUtama h2 {
+  font-size: 35px;
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+
+main .isiUtama label {
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  display: block;
+}
+
+main .isiUtama .btn {
+  margin-top: 2px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+main .myProfile {
+  width: 40%;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+main .myProfile a {
+  color: #4A73E1;
+  font-size: 17px;
+}
+
+main .myProfile img {
+  border-radius: 50%;
+  width: 150px;
+  padding: 0;
+  height: 150px;
+  border: 1px solid #ccc;
+  transition: .5s;
+}
+main .myProfile img:hover {
+  padding: 9px;
+  border: 1px solid #26be80;
+}
+
+main .myProfile h2 {
+  font-size: 35px;
+  color: #454545;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+main .myProfile h3 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+main .myProfile p {
+  padding: 10px 40px 10px 40px;
+}
+
+footer {
+  background: #fff;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.inp {
+  resize: none;
+  width: 100%;
+  padding: 10px 15px;
+  font-family: Arial;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  background: white;
+}
+
+.btn {
+  background: #26be80;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  transition: .7s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 0 3px rgba(38,190,128,.5);
+}
+
+@media (max-width: 991px) {
+  main .isiUtama {
+    max-width: 60%;
+    padding: 0 40px 20px 40px;
+  }
+  
+  .container {
+    flex-direction: column;
+  }
+  
+  main .isiUtama {
+    max-width: 100%;
+    margin-top: 10px;
+    padding-top: 10px;
+    order: 2;
+  }
+  
+  main .myProfile h2 {
+    margin-top: 70px;
+  }
+  
+  main .myProfile {
+    order: 1;
+    width: 100%;
+  }
+  
+  .sec {
+    padding: 40px;
+  }
+  
+  .navigation {
+    padding: 20px 40px;
+  }
+  
+  .navigation label {
+    min-width: 80px;
+  }
+  
+  .navigation ul {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 800;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: .3s;
+    opacity: 0;
+    top: -999px;
+    visibility: hidden;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .navigation ul.aktif{
+    top: 60px;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .navigation ul li a {
+    display: inline-block;
+    color: #454545;
+    width: 100%;
+    font-weight: 400;
+    margin-left: 0;
+    padding: 10px 0;
+    font-size: 1.1em;
+    padding-left: 40px;
+    transition: .5s;
+  }
+  
+  .navigation ul li a:hover {
+    color: #000;
+    background: rgba(255,255,255,.4);
+  }
+  
+ .toggleMenu {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-image: url("../img/menu.svg");
+    background-position: center;
+    background-size: cover;
+    transition: .2s;
+    z-index: 999;
+    border-radius: 8px;
+  }
+  
+  .toggleMenu.aktif{
+   box-shadow: 0 0 0 1px #ccc;
+  }
+  
+   .content {
+    flex-direction: column;
+    margin-top: 80px;
+  }
+  
+  .content .textBox {
+    max-width: 100%;
+  }
+  
+  .content .textBox h2 span {
+    font-size: 2em;
+  }
+  
+  .content .textBox h2 {
+    font-size: 30px;
+    padding-bottom: 5px;
+  }
+  
+  .content .textBox a {
+    font-size: 14px;
+  }
+  
+  .content .imgBox {
+    width: 100%;
+    padding-right: 0;
+    padding-bottom: 30px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  
+  .content .imgBox .mainImg {
+    max-width: 80%;
+   }
+}
+
+
+
+
+
+
+
+
+  </style>
 </head>
 <body>
-  <main>
+  <section id="home" class="sec">
+    <nav class="navigation">
+      <label>Rizal Am</label>
+      <div class="toggleMenu"></div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="Projects.html">Projects</a></li>
+        <li><a href="#aboutMe">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
     <div class="content">
-      <h1>Login</h1>
-      <input id="nama" type="text" placeholder="Username">
-      <input id="pw" type="password" placeholder="Password">
-      <input id="show" onclick="lihat()" type="checkbox">
-      <label for="show" onclick="lihat()">Tampilkan Password</label>
-      <button onclick="login()">Login</button>
-      <a href="">Belum punya akun?</a>
+      <div class="textBox">
+          <h2>I'am<br><span>Rizal Am</span></h2>
+        <p>Selamat datang nama saya adalah Rizal Amin M. Ini adalah website portofolio saya untuk menyimpan projek - projek yang telah saya buat.</p>
+        <a href="projects.html">Lihat Projects Saya</a>
+        </div>
+        <div class="imgBox">
+          <img src="img/icon.png" class="mainImg"/>
+         </div>
+      </div>
+  </section>
+  
+  <main>
+    <div class="container">
+      <div id="contact" class="isiUtama">
+        <h2>Cotact Me</h2>
+        <label for="nama">Full Name</label>
+        <input class="inp" type="text" id="nama" placeholder="Your full name..."/>
+        <label for="email">Email</label>
+        <input class="inp" type="text" id="email" placeholder="example123@gmail.com"/>
+        <label for="pesan">Message</label>
+        <textarea class="inp" id="pesan" placeholder="Write your message..." rows="8" cols="40"></textarea>
+        <button class="btn" type="submit">Submit</button>
+      </div>
+      <div id="aboutMe" class="myProfile">
+        <h2>About Me</h2>
+        <img src="img/profile.png" alt="gambar foto profil saya">
+        <h3>Rizal Amin M</h3>
+        <p>Saya adalah seorang siswa SMK.</p>
+       </div>
     </div>
   </main>
   
+  <footer>
+    <h4>Dibuat Dengan ❤️ Oleh Rizal Am</h4>
+  </footer>
+  
   <script>
-    const name = document.getElementById('nama');
-    const password = document.getElementById('pw');
-    
-    function login() {
-      if (name.value === 'admin' && password.value === 'admin') {
-        alert('succses');
-      } else {
-        alert('gagal');
-      }
-    }
-    
-    function lihat() {
-      password.style.background = 'red';
-    }
+    const menuToggle = document.querySelector('.toggleMenu');
+    const ulList = document.querySelector('.navigation ul');
+
+    menuToggle.addEventListener('click', function() {
+      ulList.classList.toggle('aktif');
+      menuToggle.classList.toggle('aktif');
+    });
   </script>
 </body>
 </html>
+
+

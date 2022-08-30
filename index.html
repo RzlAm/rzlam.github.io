@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="SKeCE9DzWAYV7sTRuusVbuNkrF2Fhvnu-ko3_9ThNn8"/>
   <meta charset="UTF-8">
-  <meta name="keywords" content="Rzl Am, Rizal Am, Rizal Amin, Rizal Amin M, Rzlam github, github pages, home, landing page, html, css, javascript, js, jquery, framework, simple, web, portofolio web design, desain web portofolio, minimalis, hijau, green, Slam, grup band, Johor Baru, Malaysia, dibentuk pada 1993, Gerimis mengundang, Kembali terjalin, Rindiani, Buat seorang kekasih, slam - suratan">
+  <meta name="keywords" content="Rzl Am, website portofolio github, web portofolio tanpa framework, website portofolio, portofolio web design, portofolio adalah dan contohnya, website pribadi html, github SLAM, github RzlAm, SLAM, website tema hijau, keep it green, Rizal Am, Rizal Amin, Rizal Amin M, Rzlam github, github pages, home, landing page, html, css, javascript, js, jquery, framework, simple, web, portofolio web design, desain web portofolio, minimalis, hijau, green, warna hijau">
   <meta name="author" content="Rizal Amin Maulana">
   <meta name="description" content="Ini adalah website portofolio yang dibuat dengan teknologi HTML CSS dan JS. Website ini dibuat tanpa menggunakan framework apapun seperti Bootstrap, Tailwind, ataupun Jquery. Website ini murni hasil buatan tanpa framework apapun.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
   <title>Rzl Am - Portofolio Website</title>
   <style>
     html {
@@ -21,7 +37,6 @@
 
 body {
   font-family: Arial;
-  height: 1000px;
 }
 
 .sec {
@@ -35,7 +50,6 @@ body {
   justify-content: space-between;
   align-items: center;
   transition: .5s;
-  box-shadow: 0 0 20px rgba(0,0,0,.1);
 }
 
 .navigation {
@@ -45,19 +59,20 @@ body {
   width: 100%;
   padding: 20px 100px;
   display: flex;
-  background: #fff;
-  border-bottom: 1px solid #ccc;
+  background: #eee;
   height: 60px;
   z-index: 999;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #eaeaea;
 }
 
 .navigation label {
   position: relative;
+  padding-left: 8px;
   font-weight: 500;
   color: #454545;
-  font-size: 25px;
+  font-size: 20px;
   min-width: 80px;
 }
 
@@ -81,6 +96,7 @@ body {
 .navigation ul li a:hover {
   -webkit-tap-highlight-color: transparent !important;
   color: #505050;
+  box-shadow: 0 3px 0 #26be80;
 }
 
 .content {
@@ -97,29 +113,17 @@ body {
 }
 
 .content .textBox h2 {
-  color: #000;
+  color: #454545;
   font-size: 1.5em;
   font-weight: 700;
 }
 
 .content .textBox h2 span {
-  border-left: 4px solid #26be80;
+  border-left: 3px solid #26be80;
   padding: 0 8px;
   font-size: 2em;
   font-style: bold;
   font-family: Segoe UI;
-  color: #000;
-  animation: fillBg 10s infinite alternate;
-}
-
-@keyframes fillBg {
-  0% {
-    background: rgb(38,190,128,0);
-  }
-  
-  100% {
-    background: rgb(38,190,128,.3);
-  }
 }
 
 /*h2.content h2 span::after {
@@ -175,11 +179,6 @@ body {
   justify-content: flex-end;
 }
 
-.gelombang {
-  margin-top: -250px;
-  position: relative;
-}
-
 main {
   width: 100%;
 }
@@ -187,6 +186,7 @@ main {
 .container {
   display: flex;
   width: 100%;
+  padding-bottom: 100px;
   justify-content: space-between;
 }
 
@@ -197,14 +197,16 @@ main .isiUtama {
 }
 
 main .isiUtama h2 {
+  color: #454545;
   font-size: 35px;
   font-weight: 500;
   padding-bottom: 20px;
 }
 
 main .isiUtama label {
-  font-size: 20px;
-  padding-top: 10px;
+  font-size: 17px;
+  color: #454545;
+  padding-top: 30px;
   padding-bottom: 5px;
   display: block;
 }
@@ -215,50 +217,14 @@ main .isiUtama .btn {
   border-radius: 5px;
 }
 
-main .myProfile {
-  width: 40%;
-  padding-bottom: 100px;
-  text-align: center;
-}
-
-main .myProfile a {
-  color: #4A73E1;
-  font-size: 17px;
-}
-
-main .myProfile img {
-  border-radius: 50%;
-  width: 150px;
-  padding: 0;
-  height: 150px;
-  border: 1px solid #ccc;
-  transition: .5s;
-}
-main .myProfile img:hover {
-  padding: 9px;
-  border: 1px solid #26be80;
-}
-
-main .myProfile h2 {
-  font-size: 35px;
-  color: #454545;
-  font-weight: 500;
-  margin-bottom: 30px;
-}
-
-main .myProfile h3 {
-  font-size: 30px;
-  font-weight: 500;
-}
-
-main .myProfile p {
-  padding: 10px 40px 10px 40px;
-}
-
 footer {
-  background: #fff;
+  background: #232323;
   text-align: center;
   padding: 50px 0;
+}
+
+footer h4 {
+  color: #eee;
 }
 
 .inp {
@@ -271,6 +237,12 @@ footer {
   border: 1px solid #ccc;
   font-size: 18px;
   background: white;
+  transition: .3s;
+}
+
+.inp:hover {
+  border: 1px solid #26be80;
+  box-shadow: 0 0 0 3px rgba(38,190,128,.4);
 }
 
 .btn {
@@ -281,11 +253,11 @@ footer {
   border: none;
   outline: none;
   font-size: 18px;
-  transition: .7s;
+  transition: .3s;
 }
 
 .btn:hover {
-  box-shadow: 0 0 0 3px rgba(38,190,128,.5);
+  box-shadow: 0 0 0 3px rgba(38,190,128,.4);
 }
 
 @media (max-width: 991px) {
@@ -305,15 +277,6 @@ footer {
     order: 2;
   }
   
-  main .myProfile h2 {
-    margin-top: 70px;
-  }
-  
-  main .myProfile {
-    order: 1;
-    width: 100%;
-  }
-  
   .sec {
     padding: 40px;
   }
@@ -330,7 +293,7 @@ footer {
     position: fixed;
     left: 0;
     width: 100%;
-    background: #fff;
+    background: #eee;
     z-index: 800;
     display: flex;
     flex-direction: column;
@@ -374,11 +337,11 @@ footer {
     background-size: cover;
     transition: .2s;
     z-index: 999;
-    border-radius: 8px;
+    border-radius: 5px;
   }
   
   .toggleMenu.aktif{
-   box-shadow: 0 0 0 1px #ccc;
+   box-shadow: 0 0 0 3px #26be80;
   }
   
    .content {
@@ -428,7 +391,7 @@ footer {
 <body>
   <section id="home" class="sec">
     <nav class="navigation">
-      <label>Rizal Am</label>
+      <label>RIZAL AM</label>
       <div class="toggleMenu"></div>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -461,17 +424,12 @@ footer {
         <textarea class="inp" id="pesan" placeholder="Write your message..." rows="8" cols="40"></textarea>
         <button class="btn" type="submit">Submit</button>
       </div>
-      <div id="aboutMe" class="myProfile">
-        <h2>About Me</h2>
-        <img src="img/profile.png" alt="gambar foto profil saya">
-        <h3>Rizal Amin M</h3>
-        <p>Saya adalah seorang siswa SMK.</p>
-       </div>
     </div>
   </main>
   
   <footer>
     <h4>Dibuat Dengan ❤️ Oleh Rizal Am</h4>
+    <h4 style="font-weight:100;">Yang Terpenting Adalah Niat <br> Dan Bersungguh - Sungguh</h4>
   </footer>
   
   <script>
@@ -485,5 +443,3 @@ footer {
   </script>
 </body>
 </html>
-
-

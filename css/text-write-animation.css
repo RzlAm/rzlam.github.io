@@ -23,7 +23,7 @@ h1:before {
   left: 0;
   top: 0;
   z-index: 990;
-  height: 1em;
+  height: 1.2em;
   width: 100%;
   background: #211C44;
   border-left: 2px solid #eaeaea;

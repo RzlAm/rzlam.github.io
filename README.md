@@ -1,6 +1,3 @@
-# rzlam.github.io
-This is my github account to save my projects
-
 <h3>Hello my name is Rizal Am</h3>
 <ul>
 <li>I’m interested in web programming languages</li>

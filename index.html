@@ -31,6 +31,7 @@
     <title>Rzl Am - Portofolio Website</title>
 </head>
 <body>
+<div class="dialog hideDialog"></div>
   <header id="home" class="sec">
     <nav class="navigation">
       <img src="img/logo.png" alt="">
@@ -47,7 +48,7 @@
         <h2>Hello wellcome to<br>my website</h2>
         <p>This website is for storing and publicizing all my projects.</p>
         <a href="projects.html">View All</a>
-        <a href="https://github.com/RzlAm">Github</a>
+        <a href="projects.html">Github</a>
         </div>
         <div class="imgBox">
           <img src="img/icon2.png" class="mainImg"/>
@@ -113,12 +114,26 @@
     <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbw7-KaHNznWJxf-0B3UE9pKAXhnOGR_qJchF7mmcOObiXvJHl71LTJbXVo30izPBgoS/exec'
   const form = document.forms['submit-to-google-sheet']
-
+  const dialog = document.querySelector('.dialog');
+  
+  function closeDialog() {
+      dialog.removeAttribute('class');
+  }
+  
   form.addEventListener('submit', e => {
     e.preventDefault()
+    dialog.innerHTML = 'Wait a few seconds...';
+    dialog.classList.toggle('hideDialog');
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
+      .then(response => {
+          dialog.innerHTML = 'Message sent successfully, thank you... <button onclick="closeDialog();">close</button>';
+          console.log('Success!', response);
+          form.reset()
+      })
+      .catch(error => {
+          dialog.innerHTML = 'Message failed to send :(, check your internet connection <button onclick="closeDialog();">close</button>';
+          console.error('Error!', error.message)
+      })
   })
   </script>
 </body>

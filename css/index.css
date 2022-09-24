@@ -378,6 +378,48 @@ main .about img {
   border-radius: 40px;
 }
 
+.dialog {
+    text-align:;
+    width: 300px;
+    padding: 20px;
+    font-size: 1.1em;
+    font-weight: 400;
+    font-family: arial;
+    border-radius: 4px;
+    background: #fff;
+    color: #26be80;
+    box-shadow: 2px 3px 20px rgba(0,0,0,.1);
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+}
+
+.hideDialog {
+    display: none;
+}
+
+.dialog button {
+    -webkit-tap-highlight-color: transparent !important;
+  background: #26be80;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-size: 16px;
+  transition: .3s;
+  cursor: pointer;
+    display: block;
+    margin-top: 20px;
+}
+
+.dialog button:hover {
+    background: #21a26d;
+}
+
 @media (max-width: 991px) {
   main .isiUtama {
     max-width: 60%;

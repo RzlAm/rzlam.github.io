@@ -100,7 +100,7 @@
           const repoCardsContainer = document.getElementById("repo-cards");
 
           repos
-            .filter((repo) => !repo.private && repo.name !== "rzlam.github.io")
+            .filter((repo) => !repo.private && repo.name !== "rzlam.github.io" || repo.name !== "rzlam")
             .forEach((repo) => {
               fetch(`https://raw.githubusercontent.com/RzlAm/${repo.name}/${repo.default_branch}/README.md`)
                 .then((res) => res.text())

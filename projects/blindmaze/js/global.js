@@ -62,11 +62,11 @@ let playerName = "",
   scoreSaved = false,
   leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
 
-let wallSound = new Audio("src/sounds/hurt.wav"),
-  bgm = new Audio("src/sounds/bgm.mp3"),
-  gameOverSound = new Audio("src/sounds/game-over.wav"),
-  xSound = new Audio("src/sounds/tap.wav"),
-  ySound = new Audio("src/sounds/jump.wav"),
-  nextSound = new Audio("src/sounds/power_up.wav");
+let wallSound = new Audio("https://rzlam.github.io/projects/blindmaze/src/sounds/hurt.wav"),
+  bgm = new Audio("https://rzlam.github.io/projects/blindmaze/src/sounds/bgm.mp3"),
+  gameOverSound = new Audio("https://rzlam.github.io/projects/blindmaze/src/sounds/game-over.wav"),
+  xSound = new Audio("https://rzlam.github.io/projects/blindmaze/src/sounds/tap.wav"),
+  ySound = new Audio("https://rzlam.github.io/projects/blindmaze/src/sounds/jump.wav"),
+  nextSound = new Audio("https://rzlam.github.io/projects/blindmaze/src/sounds/power_up.wav");
 
 bgm.loop = true;

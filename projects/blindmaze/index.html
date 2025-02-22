@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Rizal Amin Maulana" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blind Maze | Rizal Amin Maulana</title>
+    <link rel="shortcut icon" href="favicon.png" type="x-icon" />
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
+  <body>
+    <!-- alert -->
+    <div id="alertDanger" class="alert alert-danger"></div>
+    <div id="alertSuccess" class="alert alert-success"></div>
+
+    <!-- home screen -->
+    <section id="homeScreen">
+      <div>
+        <h2>WELCOME TO</h2>
+        <h1>BLIND MAZE</h1>
+        <div>
+          <input autocomplete="off" type="text" class="input" placeholder="=== Nama Pemain ===" id="nameInput" />
+        </div>
+        <div class="btn-group">
+          <button class="btn btn-primary" id="btnInstructions">Instructions</button>
+          <button class="btn btn-success" id="btnPlay">play</button>
+          <button class="btn btn-primary" id="btnLeaderboard">leaderboard</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- game Screen -->
+    <section id="gameScreen" class="none">
+      <div class="info">
+        <div>
+          <h5 id="stageDsp"></h5>
+          <h5 id="hpDsp"></h5>
+        </div>
+        <div>
+          <h5 id="nameDsp"></h5>
+        </div>
+        <div>
+          <h5 id="phaseDsp"></h5>
+          <h5 id="timerDsp"></h5>
+        </div>
+      </div>
+      <div id="maze"></div>
+      <div class="btn-game">
+        <div class="btn-ui">
+          <button class="btn btn-primary" id="btnPause">Pause</button>
+          <button class="btn btn-primary" id="btnHint">Hint <u>1</u></button>
+        </div>
+        <div class="btn-controls">
+          <button class="btn" id="btnUp">up</button>
+          <div class="btn-group">
+            <button class="btn" id="btnLeft">left</button>
+            <button class="btn" id="btnDown">Down</button>
+            <button class="btn" id="btnRight">Right</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- modal instructions -->
+    <div class="modal none" id="modalInstructions">
+      <div class="modal-content">
+        <div>
+          <h2>Instructions</h2>
+          <button id="closeInstructions2" class="btn-close-modal">&times;</button>
+        </div>
+        <ul>
+          <li>The first 7 seconds is remembering time, after that it's moving time</li>
+          <li>Use arrow keys to move</li>
+          <li>The obstacles will become more difficult as the stages increase</li>
+          <li>Use hint for 1 time</li>
+          <li>Blue is the player, green is the goal point, and gray is the wall</li>
+        </ul>
+        <div class="btn-modal">
+          <button class="btn btn-primary" id="closeInstructions">close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal Leaderboard -->
+    <div class="modal none" id="modalLeaderboard">
+      <div class="modal-content">
+        <div>
+          <h2>Leaderboard</h2>
+          <button id="closeLeaderboard2" class="btn-close-modal">&times;</button>
+        </div>
+        <table>
+          <thead>
+            <th>#</th>
+            <th>Player Name</th>
+            <th>Stage</th>
+            <th>Action</th>
+          </thead>
+          <tbody id="leaderboardData">
+            <tr>
+              <td colspan="4">Empty score</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btn-modal">
+          <button class="btn btn-danger" id="btnClear">clear all</button>
+          <button class="btn btn-primary" id="closeLeaderboard">close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal GameOver -->
+    <div class="modal none" id="modalGameOver">
+      <div class="modal-content">
+        <h2>Game Over</h2>
+        <table>
+          <thead>
+            <th>Player Name</th>
+            <th>Stage</th>
+          </thead>
+          <tbody id="gameOverData">
+            <tr>
+              <td colspan="2">Score is empty</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btn-modal">
+          <button class="btn btn-primary" id="btnSaveScore">save score</button>
+          <button class="btn" id="btnNewGame">play again</button>
+          <button class="btn" id="btnExit">exit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal Pause -->
+    <div class="modal none" id="modalPause">
+      <div class="modal-content">
+        <h2>Game Paused</h2>
+
+        <div class="btn-modal">
+          <button class="btn btn-primary" id="btnContinue">continue</button>
+          <button class="btn" id="btnRestart">Restart</button>
+          <button class="btn" id="btnMainMenu">exit</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/js/global.js"></script>
+    <script src="src/js/function.js"></script>
+    <script src="src/js/script.js"></script>
+  </body>
+</html>

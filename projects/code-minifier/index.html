@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta name="description" content="Minify your HTML, CSS, JavaScript, and PHP code easily with our online tool. Fast and simple." />
+    <meta name="keywords" content="code minifier, minify HTML, minify CSS, minify JavaScript, minify PHP, online tool, code optimization" />
+    <meta property="og:title" content="Code Minifier - Minify your code" />
+    <meta property="og:description" content="Minify your HTML, CSS, JavaScript, and PHP code easily with our online tool." />
+    <meta property="og:image" content="https://rzlam.github.io/projects/code-minifier/assets/images/image.png" />
+    <meta property="og:url" content="https://rzlam.github.io/projects/code-minifier" />
+    <meta name="author" content="Rizal Amin Maulana" />
+    <title>Code Minifier - Minify your code</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <nav class="navbar border-bottom">
+      <div class="container px-0">
+        <a class="navbar-brand fw-bold" href="#">Code Minifier</a>
+        <a href="" class="btn btn-light fs-5 rounded-pill"><i class="fab fa-github"></i></a>
+      </div>
+    </nav>
+
+    <main class="container my-5">
+      <div class="row">
+        <h2 class="px-0"><b>Code Minifier</b></h2>
+        <p class="mb-4 text-secondary px-0 fs-5">Minify your HTML, CSS, JavaScript, and PHP code easily, fast and simple.</p>
+        <select id="language" class="rounded-3 form-select w-auto mb-2">
+          <option value="js">JavaScript</option>
+          <option value="css">CSS</option>
+          <option value="html">HTML</option>
+          <option value="php">PHP</option>
+        </select>
+
+        <textarea class="rounded-3 form-control" id="inputCode" rows="8" placeholder="Paste code here..."></textarea>
+        <button class="btn w-auto px-3 btn-dark mt-2 mb-4" onclick="minifyCode()">Minify&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></button>
+        <textarea class="rounded-3 form-control mb-2" id="outputCode" disabled rows="8" readonly placeholder="Result code..."></textarea>
+
+        <div class="d-flex px-0">
+          <button class="btn w-auto px-3 btn-dark me-2" onclick="copyToClipboard()">Copy&nbsp;&nbsp;<i class="fa fa-copy"></i></button>
+          <button class="btn w-auto px-3 btn-outline-dark" onclick="downloadCode()">Download&nbsp;&nbsp;<i class="fa fa-download"></i></button>
+        </div>
+      </div>
+    </main>
+
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script>
+      function minifyCode() {
+        const lang = document.getElementById("language").value;
+        let code = document.getElementById("inputCode").value;
+
+        if (!code.trim()) {
+          alert("Please enter some code!");
+          return;
+        }
+
+        let minified = code;
+
+        if (lang === "js" || lang === "css" || lang === "html") {
+          minified = code
+            .replace(/\/\*[\s\S]*?\*\//g, "")
+            .replace(/\/\/.*|<!--.*?-->/g, "")
+            .replace(/\s+/g, " ")
+            .replace(/\n/g, "")
+            .replace(/\t/g, "");
+        } else if (lang === "php") {
+          minified = code
+            .replace(/\/\*[\s\S]*?\*\//g, "")
+            .replace(/\/\/.*|#.*|<!--.*?-->/g, "")
+            .replace(/\s+/g, " ")
+            .replace(/\n/g, "")
+            .replace(/\t/g, "");
+        }
+
+        document.getElementById("outputCode").value = minified;
+      }
+
+      function copyToClipboard() {
+        let output = document.getElementById("outputCode");
+        output.select();
+        navigator.clipboard
+          .writeText(output.value)
+          .then(function () {
+            alert("Code copied to clipboard!");
+          })
+          .catch(function () {
+            alert("Failed to copy code!");
+          });
+      }
+
+      function downloadCode() {
+        let output = document.getElementById("outputCode").value;
+        if (!output.trim()) {
+          alert("No code to download!");
+          return;
+        }
+
+        const lang = document.getElementById("language").value;
+        let ext = lang === "js" ? "js" : lang === "css" ? "css" : lang === "html" ? "html" : "php";
+        let blob = new Blob([output], { type: "text/plain" });
+        let a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = `minified.min.${ext}`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+		--primary: #111111;
+		--card: #080808;
+		--secondary: #181818;
+		--accent: #262626;
+}
+
+body {
+		font-family: 'Inter', sans-serif;
+		background-color: var(--primary);
+		color: #e5e5e5;
+}
+
+.repo-card {
+		background-color: var(--card);
+		transition: all 0.3s ease;
+		border: 1px solid #262626;
+}
+
+.repo-card:hover {
+		transform: translateY(-3px);
+		border-color: #525252;
+		box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+.loading-spinner {
+		border: 4px solid #262626;
+		border-radius: 50%;
+		border-top: 4px solid #737373;
+		width: 40px;
+		height: 40px;
+		animation: spin 1s linear infinite;
+}
+
+.stat-card {
+		background-color: var(--secondary);
+		border: 1px solid #262626;
+}
+
+.stat-card:hover {
+		background-color: #1a1a1a;
+}
+
+footer {
+		background-color: black;
+}
+
+@keyframes spin {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+}
